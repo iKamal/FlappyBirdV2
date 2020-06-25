@@ -21,8 +21,8 @@ window.onload=function()
     } else {
         var config = {
             type: Phaser.AUTO,
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: 288,
+            height: 512,
             parent: 'phaser-game',
             scene: [SceneMain, StartScreen, GameScene],
 
