@@ -12,10 +12,7 @@ window.onload=function()
             height: 512,
             parent: 'phaser-game',
             scene: [SceneMain, StartScreen, GameScene],
-            scale: {
-                mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH
-            },
+
             physics: {
                 default: 'arcade',
                 arcade: { debug: false }
@@ -28,10 +25,7 @@ window.onload=function()
             height: window.innerHeight,
             parent: 'phaser-game',
             scene: [SceneMain, StartScreen, GameScene],
-            scale: {
-                mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH
-            },
+
             physics: {
                 default: 'arcade',
                 arcade: { debug: false }

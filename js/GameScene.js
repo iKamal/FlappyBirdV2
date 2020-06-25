@@ -13,9 +13,10 @@ class GameScene extends Phaser.Scene {
     }
 
     create() {
-        this.bg = this.add.image(0,0, 'bg');
+        this.bg = this.add.image(game.config.width, game.config.height, 'bg');
+        this.bg.setOrigin(1,1);
         this.world = game.config;
-        Align.center(this.bg);
+        Align.scaleToGameW(this.bg, 1);
         console.log("Game Scene!");
         this.bgMusic = this.sound.add('bgMusic');
         this.bgMusic.play('', 0, 0.3, true);
@@ -30,8 +31,9 @@ class GameScene extends Phaser.Scene {
         this.pipeUp.body.immovable = true;
         this.pipeDown.enableBody = true;
         this.pipeDown.body.immovable = true;
-        this.fg = this.add.image(0, this.world.height, 'fg');
-        this.fg.setOrigin(0,1);
+        this.fg = this.add.image(this.world.width, this.world.height, 'fg');
+        this.fg.setOrigin(1,1);
+        Align.scaleToGameW(this.fg, 1);
         this.pBut = this.add.image(this.world.width/2, this.world.height - 50, 'pBut').setInteractive();
         this.pBut.on('pointerdown', this.clickedPause.bind(this));
         this.bg.on('pointerdown', this.fly);
