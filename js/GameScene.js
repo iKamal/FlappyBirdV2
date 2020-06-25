@@ -167,9 +167,9 @@ class GameScene extends Phaser.Scene {
         if(this.pipeUp.x + this.pipeUp.width >=0){
             this.pipeUp.setVelocityX(this.speed);
             this.pipeDown.setVelocityX(this.speed);
-            if(this.pipeUp.x + this.pipeUp.width < this.bird.x && (this.pipeUp.x + this.pipeUp.width) > (this.bird.x-1)){
+            /*if(this.pipeUp.x + this.pipeUp.width < this.bird.x && (this.pipeUp.x + this.pipeUp.width) > (this.bird.x-1)){
                 this.selectSound.play();
-            }
+            }*/
         }
         else{
             // reset pipe position x to max
@@ -192,6 +192,7 @@ class GameScene extends Phaser.Scene {
             }
 
             this.pipeDown.y = this.pipeUp.y + this.pipeUp.height + 80;
+            this.selectSound.play();
             this.scoreCount++;
             this.score.text = "SCORE: " + this.scoreCount;
             if(this.scoreCount%this.speedIncrementScore === 0){
